@@ -19,7 +19,7 @@ public:
         out.open(file_out);
         in.open(file_in);
         in >> cicle;
-        Adress adress[cicle];
+        Adress* adress = new Adress[cicle];
         for(int i = 0; i < cicle; i++){
             in >> adress[i].city;
             in >> adress[i].street;
@@ -33,6 +33,7 @@ public:
             out << adress[i].number_house << ", ";
             out << adress[i].number_flat << "\n";
         }
+        delete[] adress;
     }
 
 };
